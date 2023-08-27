@@ -7,7 +7,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    minHeight: "calc(100vh - 150px)",
     backgroundColor: "#121212",
   },
   uploadContent: {

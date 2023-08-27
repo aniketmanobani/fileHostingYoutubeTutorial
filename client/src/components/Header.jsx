@@ -1,6 +1,6 @@
 import React from "react";
 import { Config } from "../config";
-
+import { Link } from "react-router-dom";
 const headerStyles = {
   header: {
     position: "sticky",
@@ -17,6 +17,8 @@ const headerStyles = {
   logo: {
     fontSize: "1.5rem",
     fontWeight: "bold",
+    color: "white !important",
+    textDecoration: "none !important",
   },
   navLink: {
     color: "white",
@@ -33,17 +35,22 @@ const Header = () => {
   return (
     <header style={headerStyles.header}>
       <div style={headerStyles.container}>
-        <div style={headerStyles.logo}>{Config.APP_NAME}</div>
+        <div style={headerStyles.logo}>
+          <Link to="/" style={headerStyles.navLink}>
+            {Config.APP_NAME}
+          </Link>
+        </div>
         <nav style={headerStyles.navLink}>
-          <a style={headerStyles.navLink} href="#">
-            Link 1
-          </a>
-          <a style={headerStyles.navLink} href="#">
-            Link 2
-          </a>
-          <a style={headerStyles.navLink} href="#">
-            Link 3
-          </a>
+          <Link style={headerStyles.navLink} to="/">
+            Home
+          </Link>
+          <Link style={headerStyles.navLink} to="/upload">
+            Upload
+          </Link>
+
+          <Link style={headerStyles.navLink} to="/about">
+            About Us
+          </Link>
         </nav>
       </div>
     </header>

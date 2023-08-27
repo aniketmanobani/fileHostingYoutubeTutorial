@@ -21,7 +21,7 @@ const UploadRoute = async (req, res) => {
     const mediaFile = new MediaFile({
       filename: uploadedFile.name,
       filesize: uploadedFile.size,
-      path: uploadPath,
+      path: uniqueFileName,
       visitcount: 0,
     });
 
